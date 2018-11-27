@@ -45,7 +45,6 @@ supervisord.pid
 
 ## WordPress
 wp-config.php
-wp-content/uploads/
 wp-content/blogs.dir/
 wp-content/upgrade/*
 wp-content/backup-db/*
