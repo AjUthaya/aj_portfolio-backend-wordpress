@@ -1,0 +1,19 @@
+{
+  "name": "aj_portfolio-backend-wordpress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "assets:watch": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AjanthUthaya/aj_portfolio-backend-wordpress.git"
+  },
+  "author": "Aj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AjanthUthaya/aj_portfolio-backend-wordpress/issues"
+  },
+  "homepage": "https://github.com/AjanthUthaya/aj_portfolio-backend-wordpress#readme"
+}
