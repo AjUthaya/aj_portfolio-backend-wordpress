@@ -1,12 +1,11 @@
 <?php
 /*
-Template Name: Index page
+Template Name: Default page
 */
-get_header();
-?>
 
-HOME
+// Get global data
+$context = Timber::get_context();
+$templates = array('containers/index.twig');
 
-<?php
-get_footer();
-?>
+// Render page
+Timber::render($templates, $context);

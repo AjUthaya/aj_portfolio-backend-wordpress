@@ -2,11 +2,10 @@
 /*
 Template Name: Frontpage
 */
-get_header();
-?>
 
-HOME
+// Get global data
+$context = Timber::get_context();
+$templates = array('containers/home.twig');
 
-<?php
-get_footer();
-?>
+// Render page
+Timber::render($templates, $context);
