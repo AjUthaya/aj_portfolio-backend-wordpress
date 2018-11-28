@@ -26,6 +26,7 @@ config/local.js
 config/database.js
 src/local.js
 config/local.php
+docker-compose.yml
 
 
 ## Test files
