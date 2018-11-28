@@ -25,7 +25,7 @@ function get_env()
         // B. Check if the regex defined above matches any of the dev url's
         if ($matches) {
             // I. Set env variable to dev
-            //$env = 'dev';
+            $env = 'dev';
         }
     }
     
