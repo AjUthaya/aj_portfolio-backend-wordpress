@@ -24,6 +24,9 @@ require_once __DIR__ . '/functions/cpt/remove_default_post_type.php';
 // IMPORT: ACF setup
 //
 
+// IMPORT: Mime support for uploads
+require_once __DIR__ . '/functions/general/mime_upload_support.php';
+
 
 /*
   ------------------------------------------------------------------------------
