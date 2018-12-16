@@ -1,0 +1,24 @@
+{
+  "baseUrl": null,
+  "defaultCommandTimeout": 4000,
+  "env": {
+    "devUrl": "",
+    "url": ""
+  },
+  "execTimeout": 60000,
+  "fixturesFolder": "tests/fixtures",
+  "hosts": null,
+  "integrationFolder": "tests/integration",
+  "modifyObstructiveCode": true,
+  "pageLoadTimeout": 60000,
+  "pluginsFile": "tests/plugins",
+  "port": null,
+  "requestTimeout": 5000,
+  "responseTimeout": 30000,
+  "screenshotsFolder": "tests/screenshots",
+  "supportFile": "tests/support",
+  "taskTimeout": 60000,
+  "videosFolder": "tests/videos",
+  "viewportHeight": 1080,
+  "viewportWidth": 1920
+}

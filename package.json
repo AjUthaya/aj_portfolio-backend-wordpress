@@ -1,19 +1,18 @@
 {
-  "name": "aj_portfolio-backend-wordpress",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "assets:watch": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AjanthUthaya/aj_portfolio-backend-wordpress.git"
-  },
+  "name": "aj_portfolio-frontend-react",
+  "version": "0.0.1",
+  "description": "Headless WordPress backend for AJ Portfolio",
   "author": "Aj",
+  "private": true,
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/AjanthUthaya/aj_portfolio-backend-wordpress/issues"
+  "main": "index.php",
+  "scripts": {
+    "assets:watch": "echo \"Error: no test specified\" && exit 1",
+    "reset": "rm -r node_modules && rm -r package-lock.json",
+    "tests": "node node_modules/.bin/cypress run",
+    "tests:open": "node node_modules/.bin/cypress open"
   },
-  "homepage": "https://github.com/AjanthUthaya/aj_portfolio-backend-wordpress#readme"
+  "dependencies": {
+    "cypress": "^3.1.2"
+  }
 }

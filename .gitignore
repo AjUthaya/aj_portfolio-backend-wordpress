@@ -23,15 +23,15 @@ yarn-error.log*
 
 ## Config
 config/local.js
+config/local.php
 config/database.js
 src/local.js
-config/local.php
-docker-compose.yml
+
 
 
 ## Test files
-cypress/screenshots/*
-cypress/videos/*
+tests/screenshots/*
+tests/videos/*
 test-results.xml
 
 
@@ -46,6 +46,7 @@ supervisord.pid
 
 ## WordPress
 wp-config.php
+wp-content/uploads/
 wp-content/blogs.dir/
 wp-content/upgrade/*
 wp-content/backup-db/*
