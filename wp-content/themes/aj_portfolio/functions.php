@@ -1,6 +1,5 @@
 <?php
 
-
 // IF: Envirement is development
 if (get_env() === 'dev') {
     // Enable on screen error messages
@@ -26,9 +25,9 @@ require_once __DIR__ . '/functions/cpt/remove_default_post_type.php';
 
 // IMPORT: Mime support for uploads
 require_once __DIR__ . '/functions/general/mime_upload_support.php';
+
 // IMPORT: Skills widget
 require_once __DIR__ . '/functions/widgets/skills.php';
-
 
 /*
   ------------------------------------------------------------------------------
@@ -60,21 +59,16 @@ class AjPortfolio extends Timber\Site
         if (!empty((array) $logged_in_user->data)) {
             $context['logged_in'] = true;
         }
-
         // Site
         $context['site'] = $this;
         $context['page'] = new TimberPost();
-
         // Logo
         $svg_logo = file_get_contents(__DIR__ . '/assets/images/logo.svg');
         $context['logo_svg'] = $svg_logo;
-
         // Menus
         $context['menu_top_nav'] = new Timber\Menu('menu_top_nav');
-
         // Dev
         $context['env'] = get_env();
-
         // RETURN
         return $context;
     }

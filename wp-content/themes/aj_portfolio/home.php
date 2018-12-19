@@ -5,7 +5,7 @@ Template Name: Frontpage
 
 // Get global data
 $context = Timber::get_context();
-$templates = array('containers/home.twig');
+$templates = array('views/home.twig');
 
 // Render page
 Timber::render($templates, $context);
