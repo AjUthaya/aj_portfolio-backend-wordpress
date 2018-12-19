@@ -1,0 +1,49 @@
+# Version
+version: "3"
+# Services
+services:
+  # App (NGINX)
+  app:
+    image: ajuthaya/nginx
+    restart: always
+    volumes:
+      - ./:/usr/share/nginx/html
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - 127.0.0.1:3000:80
+
+    links:
+      - php
+
+  # PHP
+  php:
+    image: ajuthaya/php
+    restart: always
+    volumes:
+      - ./:/usr/share/nginx/html
+
+  # MySql
+  mysql:
+    image: mysql:5.7
+    restart: always
+    volumes:
+      - /opt/docker/mysql/aj_portfolio-backend-wordpress:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${mysql_dev_root}
+      MYSQL_DATABASE: ${mysql_dev_database}
+      MYSQL_USER: ${mysql_dev_username}
+      MYSQL_PASSWORD: ${mysql_dev_password}
+
+  # PhpMyAdmin
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - 3001:80
+    links:
+      - mysql:db
+    environment:
+      MYSQL_ROOT_PASSWORD: ${mysql_dev_root}
+      MYSQL_DATABASE: ${mysql_dev_database}
+      MYSQL_USER: ${mysql_dev_username}
+      MYSQL_PASSWORD: ${mysql_dev_password}
