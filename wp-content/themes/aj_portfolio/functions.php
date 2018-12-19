@@ -63,7 +63,7 @@ class AjPortfolio extends Timber\Site
         $context['site'] = $this;
         $context['page'] = new TimberPost();
         // Logo
-        $svg_logo = file_get_contents(__DIR__ . '/assets/images/logo.svg');
+        $svg_logo = file_get_contents(__DIR__ . '/assets/images/logo_icon.svg');
         $context['logo_svg'] = $svg_logo;
         // Menus
         $context['menu_top_nav'] = new Timber\Menu('menu_top_nav');
