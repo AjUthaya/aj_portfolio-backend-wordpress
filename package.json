@@ -7,12 +7,28 @@
   "license": "ISC",
   "main": "index.php",
   "scripts": {
-    "assets:watch": "echo \"Error: no test specified\" && exit 1",
+    "assets": "webpack --mode development --watch",
+    "assets:build": "webpack --mode production",
     "reset": "rm -r node_modules && rm -r package-lock.json",
     "tests": "node node_modules/.bin/cypress run",
     "tests:open": "node node_modules/.bin/cypress open"
   },
-  "dependencies": {
-    "cypress": "^3.1.2"
+  "devDependencies": {
+    "cypress": "^3.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.4",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^1.0.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "mini-css-extract-plugin": "^0.4.3",
+    "node-sass": "^4.9.3",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.0",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
   }
 }

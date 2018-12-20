@@ -17,17 +17,14 @@ require_once __DIR__ . '/functions/dev/get_env.php';
 // IMPORT: CPT setup
 require_once __DIR__ . '/functions/cpt/projects.php';
 require_once __DIR__ . '/functions/cpt/experiences.php';
+require_once __DIR__ . '/functions/cpt/skills.php';
 require_once __DIR__ . '/functions/cpt/remove_default_post_type.php';
-
-//
-// IMPORT: ACF setup
-//
 
 // IMPORT: Mime support for uploads
 require_once __DIR__ . '/functions/general/mime_upload_support.php';
 
-// IMPORT: Skills widget
-require_once __DIR__ . '/functions/widgets/skills.php';
+// IMPORT: Enqueue assets
+require_once __DIR__ . '/functions/general/enqueue_assets.php';
 
 /*
   ------------------------------------------------------------------------------
