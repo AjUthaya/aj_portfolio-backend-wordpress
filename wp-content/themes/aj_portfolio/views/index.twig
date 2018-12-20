@@ -4,28 +4,52 @@
         <h2>AJ Portfolio - <a href="/wp-login.php">Login to admin</a></h2>
 
 
-        </br>
-        <h2>Project/s</h2>
 
-        <p>
-            <b>All</b> - <a href="/wp-json/wp/v2/projects/">/wp-json/wp/v2/projects/</a>
-        </p>
-
-
-        </br>
-        <h2>Experience/s</h2>
-        
-        <p>
-            <b>All</b> - <a href="/wp-json/wp/v2/experiences/">/wp-json/wp/v2/experiences/</a>
-        </p>
+        <!-- General -->
+        <h3>General</h3>
+            
+            <span>404</span> - <a href="/wp-json/wp/v2/404">/wp-json/wp/v2/404</a>
+            </br>
+            <span>Index</span> - <a href="/wp-json/wp/v2">/wp-json/wp/v2</a>
         
 
-        </br><!-- Skills -->
-        <h2>Skill/s</h2>
-        
-        <p>
-            <b>All</b> - <a href="/wp-json/wp/v2/skills/">/wp-json/wp/v2/skills/</a>
-        </p>
+        <!-- Filters -->
+        <h2>Global filters</h2>
+            <span>Coming soon - </span><a href="https://wordpress.org/plugins/wp-rest-filter/">Docs for the filter plugin</a>
+
+
+        <!-- Authentication -->
+        <h3>Authentication</h3>
+            
+            <span>Index</span> - <a href="/wp-json/jwt-auth/v1">/wp-json/jwt-auth/v1</a>
+            </br>
+            <span>Generate token</span> - <a href="/wp-json/jwt-auth/v1/token">/wp-json/jwt-auth/v1/token</a>
+            </br>
+            <span>Validate token</span> - <a href="/wp-json/jwt-auth/v1/token/validate">/wp-json/jwt-auth/v1/token/validate</a>
+
+
+        <!-- Projects -->
+        <h2>Projects</h2>
+            <span>All</span> - <a href="/wp-json/wp/v2/projects/">/wp-json/wp/v2/projects/</a>
+            <br>
+            <span>Single</span> - /wp-json/wp/v2/projects/&#60;ID_OR_TITLE&#62;
+
+
+        <!-- Experiences -->
+        <h2>Experiences</h2>
+            <span>All</span> - <a href="/wp-json/wp/v2/experiences/">/wp-json/wp/v2/experiences/</a>
+            <br>
+            <span>Single</span> - /wp-json/wp/v2/experiences/&#60;ID_OR_TITLE&#62;        
+
+
+        <!-- Skills -->
+        <h2>Skills</h2>
+            <span>All</span> - <a href="/wp-json/wp/v2/skills/">/wp-json/wp/v2/skills/</a>
+            <br>
+            <span>Single</span> - /wp-json/wp/v2/skills/&#60;ID_OR_TITLE&#62;
+
+
+
     </div>
 
 {% include "views/footer.twig" %}
