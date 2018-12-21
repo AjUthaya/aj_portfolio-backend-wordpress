@@ -2,30 +2,30 @@
 /**
  * @author  Aj <ajanth@levelup.no>
  * @version 2.0
- * @since   2018-12-19
+ * @since   2018-12-20
  *
- * POST TYPE: Skills
+ * POST TYPE: Categories
  */
-function init_cpt_skills()
+function init_cpt_categories()
 {
     // 1. Define: Labels
     $labels = array(
-    'name' => 'Skills',
-    'singular_name' => 'Skill',
-    'menu_name' => 'Skills'
+    'name' => 'Categories',
+    'singular_name' => 'Category',
+    'menu_name' => 'Categories'
     );
     // 2. Define: Supports
     $supports = array('title', 'editor', 'revisions');
     // REGISTER NEW POST TYPE
     register_post_type(
-        'skills', array(
+        'categories', array(
             'labels' => $labels,
             'description' => '',
             'supports' => $supports,
             'public' => true,
-            'menu_icon' => 'dashicons-admin-tools'
+            'menu_icon' => 'dashicons-tag'
         )
     );
 }
 
-add_action('init', 'init_cpt_skills');
+add_action('init', 'init_cpt_categories');

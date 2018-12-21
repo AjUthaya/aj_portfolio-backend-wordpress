@@ -18,7 +18,10 @@ require_once __DIR__ . '/functions/dev/get_env.php';
 require_once __DIR__ . '/functions/cpt/projects.php';
 require_once __DIR__ . '/functions/cpt/experiences.php';
 require_once __DIR__ . '/functions/cpt/skills.php';
+require_once __DIR__ . '/functions/cpt/categories.php';
 require_once __DIR__ . '/functions/cpt/remove_default_post_type.php';
+
+// IMPORT: ACF configs
 
 // IMPORT: Mime support for uploads
 require_once __DIR__ . '/functions/general/mime_upload_support.php';
