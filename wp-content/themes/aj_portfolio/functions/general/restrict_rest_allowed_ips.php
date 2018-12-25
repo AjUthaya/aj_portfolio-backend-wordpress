@@ -10,7 +10,7 @@ function restrict_rest_allowed_ips($errors) {
 
   // 1. DEFINE: Allowed IP addresses
   $allowed_ips = array(
-    '127.0.0.1',
+    // Local
     '172.18.0.1'
   );
 
