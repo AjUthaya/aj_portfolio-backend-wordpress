@@ -1,89 +1,88 @@
 <?php
-/**
- * The base configuration for WordPress
- *
- * The wp-config.php creation script uses this file during the
- * installation. You don't have to use the web site, you can
- * copy this file to "wp-config.php" and fill in the values.
- *
- * This file contains the following configurations:
- *
- * * MySQL settings
- * * Secret keys
- * * Database table prefix
- * * ABSPATH
- *
- * @link https://codex.wordpress.org/Editing_wp-config.php
- *
- * @package WordPress
- */
-
-// ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define('DB_NAME', 'database_name_here');
-
-/** MySQL database username */
-define('DB_USER', 'username_here');
-
-/** MySQL database password */
-define('DB_PASSWORD', 'password_here');
-
-/** MySQL hostname */
-define('DB_HOST', 'localhost');
-
-/** Database Charset to use in creating database tables. */
-define('DB_CHARSET', 'utf8');
-
-/** The Database Collate type. Don't change this if in doubt. */
+// Database Configuration
+define('DB_HOST', 'ENTER_DB_HOST_NAME_HERE');
+define('DB_NAME', 'ENTER_DB_NAME_HERE');
+define('DB_USER', 'ENTER_DB_USERNAME_HERE');
+define('DB_PASSWORD', 'ENTER_DB_PASSWORD_HERE');
+define('DB_CHARSET', 'utf8mb4');
 define('DB_COLLATE', '');
-
-/**#@+
- * Authentication Unique Keys and Salts.
- *
- * Change these to different unique phrases!
- * You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}
- * You can change these at any point in time to invalidate all existing cookies. This will force all users to have to log in again.
- *
- * @since 2.6.0
- */
-define('AUTH_KEY',         'put your unique phrase here');
-define('SECURE_AUTH_KEY',  'put your unique phrase here');
-define('LOGGED_IN_KEY',    'put your unique phrase here');
-define('NONCE_KEY',        'put your unique phrase here');
-define('AUTH_SALT',        'put your unique phrase here');
-define('SECURE_AUTH_SALT', 'put your unique phrase here');
-define('LOGGED_IN_SALT',   'put your unique phrase here');
-define('NONCE_SALT',       'put your unique phrase here');
-
-/**#@-*/
-
-/**
- * WordPress Database Table prefix.
- *
- * You can have multiple installations in one database if you give each
- * a unique prefix. Only numbers, letters, and underscores please!
- */
 $table_prefix  = 'wp_';
 
-/**
- * For developers: WordPress debugging mode.
- *
- * Change this to true to enable the display of notices during development.
- * It is strongly recommended that plugin and theme developers use WP_DEBUG
- * in their development environments.
- *
- * For information on other constants that can be used for debugging,
- * visit the Codex.
- *
- * @link https://codex.wordpress.org/Debugging_in_WordPress
- */
-define('WP_DEBUG', false);
 
-/* That's all, stop editing! Happy blogging. */
+// Security Salts, Keys, Etc
+define('AUTH_KEY',         'ENTER_YOUR_KEY_HERE');
+define('SECURE_AUTH_KEY',  'ENTER_YOUR_KEY_HERE');
+define('LOGGED_IN_KEY',    'ENTER_YOUR_KEY_HERE');
+define('NONCE_KEY',        'ENTER_YOUR_KEY_HERE');
+define('AUTH_SALT',        'ENTER_YOUR_KEY_HERE');
+define('SECURE_AUTH_SALT', 'ENTER_YOUR_KEY_HERE');
+define('LOGGED_IN_SALT',   'ENTER_YOUR_KEY_HERE');
+define('NONCE_SALT',       'ENTER_YOUR_KEY_HERE');
 
-/** Absolute path to the WordPress directory. */
-if ( !defined('ABSPATH') )
-	define('ABSPATH', dirname(__FILE__) . '/');
 
-/** Sets up WordPress vars and included files. */
-require_once(ABSPATH . 'wp-settings.php');
+// SSL, Site url, Etc
+define('FORCE_SSL_LOGIN', false);
+define('WP_POST_REVISIONS', false);
+define('WP_TURN_OFF_ADMIN_BAR', false);
+define('WP_SITEURL', 'ENTER_YOUR_SITE_URL_HERE');
+define('WP_HOME', 'ENTER_YOUR_HOME_URL_HERE');
+define('DOMAIN_CURRENT_SITE', 'ENTER_YOUR_SITE_URL_WITHOUT_PROTOCOL_HERE');
+define('WPLANG', '');
+
+
+// API JWT AUTH
+define('JWT_AUTH_SECRET_KEY', 'test');
+define('JWT_AUTH_CORS_ENABLE', true);
+define('API_WHITELIST_IPS', array(
+    'ENTER_AN_IP_ADDRESS_HERE'
+));
+
+
+// Multisite settings
+define('WP_ALLOW_MULTISITE', false);
+define('WP_FALSE', true);
+$base = '/';
+
+
+// Envirement
+require_once __DIR__ . '/wp-content/themes/aj_portfolio/functions/dev/get_env.php';
+$env = get_env();
+
+
+// Sentry settings
+if ($env === 'prod') {
+    // Setup (https://docs.sentry.io/clients/php/config/#sentry-php-request-context)
+    include_once __DIR__ .  '/wp-content/plugins/Raven/Autoloader.php';
+    Raven_Autoloader::register();
+    $client = new Raven_Client('ENTER_YOUR_SENTRY_DNS_KEY_HERE', array(
+      'environment' => $env,
+      'php_version' => phpversion(),
+      'app_path' => dirname(__FILE__) . '/'
+    ));
+
+    // Hook into errors
+    $error_handler = new Raven_ErrorHandler($client);
+    $error_handler->registerExceptionHandler();
+    $error_handler->registerErrorHandler();
+    $error_handler->registerShutdownFunction();
+}
+
+
+// Debug
+if ($env === 'prod') {
+    define('WP_DEBUG', false);
+    define('WP_DEBUG_DISPLAY', false);
+    define('WP_DEBUG_LOG', false);
+} else {
+    define('WP_DEBUG', true);
+    define('WP_DEBUG_DISPLAY', true);
+    define('WP_DEBUG_LOG', true);
+}
+
+
+// That's It. Pencils down
+if (!defined('ABSPATH') ) {
+    define('ABSPATH', dirname(__FILE__) . '/');
+}
+
+require_once ABSPATH . 'wp-settings.php';
