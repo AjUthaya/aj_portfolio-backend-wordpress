@@ -7,6 +7,8 @@
   "license": "ISC",
   "main": "index.php",
   "scripts": {
+    "start": "docker-compose up",
+    "stop": "docker-compose down",
     "assets": "webpack --mode development --watch",
     "assets:build": "webpack --mode production",
     "reset": "rm -r node_modules && rm -r package-lock.json",
