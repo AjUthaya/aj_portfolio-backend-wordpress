@@ -1,9 +1,16 @@
 <?php
+// Simple function to set default value
+function default_value(&$var, $default) {
+    if (empty($var)) {
+        $var = $default;
+    }
+}
+
 // Database Configuration
-define('DB_HOST', 'ENTER_DB_HOST_NAME_HERE');
-define('DB_NAME', 'ENTER_DB_NAME_HERE');
-define('DB_USER', 'ENTER_DB_USERNAME_HERE');
-define('DB_PASSWORD', 'ENTER_DB_PASSWORD_HERE');
+define('DB_HOST', default_value($_ENV['WORDPRESS_DB_HOST'], 'value'));
+define('DB_NAME', default_value($_ENV['WORDPRESS_DB'], 'value'));
+define('DB_USER', default_value($_ENV['WORDPRESS_DB_USER'], 'value'));
+define('DB_PASSWORD', default_value($_ENV['WORDPRESS_DB_PASSWORD'], 'value'));
 define('DB_CHARSET', 'utf8mb4');
 define('DB_COLLATE', '');
 $table_prefix  = 'wp_';
