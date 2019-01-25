@@ -8,12 +8,13 @@
  */
 function restrict_rest_allowed_ips($errors) {
 
+  /*
   // IF: Request IP is not in the allowed IP array
   if (!in_array($_SERVER['REMOTE_ADDR'], API_WHITELIST_IPS)) {
     return new WP_Error('forbidden_access', 'Request origin of ' . $_SERVER['REMOTE_ADDR'] . ' is not whitelisted', array(
       'status' => 403
     ));
-  }
+  }*/
 
   return $errors;
 }
