@@ -27,8 +27,9 @@ require_once __DIR__ . '/functions/general/mime_upload_support.php';
 // IMPORT: Enqueue assets
 require_once __DIR__ . '/functions/general/enqueue_assets.php';
 
-// IMPORT: Restrict rest allowed IPs
-require_once __DIR__ . '/functions/general/restrict_rest_allowed_ips.php';
+// IMPORT: Rest
+require_once __DIR__ . '/functions/general/rest_restrict.php';
+require_once __DIR__ . '/functions/general/rest_cors.php';
 
 /*
   ------------------------------------------------------------------------------

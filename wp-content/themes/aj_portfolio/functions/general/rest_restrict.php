@@ -6,7 +6,7 @@
  *
  * FUNCTION: Restrict allowed IP addresses
  */
-function restrict_rest_allowed_ips($errors) {
+function rest_restrict($errors) {
 
   /*
   // IF: Request IP is not in the allowed IP array
@@ -19,4 +19,4 @@ function restrict_rest_allowed_ips($errors) {
   return $errors;
 }
 
-add_filter('rest_authentication_errors', 'restrict_rest_allowed_ips');
+add_filter('rest_authentication_errors', 'rest_restrict');
