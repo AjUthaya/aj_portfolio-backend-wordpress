@@ -4,7 +4,7 @@ Plugin Name: Physical Custom Upload Dir for Real Media Library
 Plugin URI: http://matthias-web.de
 Description: When uploading files to your media library folder the files will be placed to the given physical folder.
 Author: Matthias Günter
-Version: 1.0.4
+Version: 1.0.5
 Author URI: http://matthias-web.de
 Licence: GPLv2
 */
@@ -46,7 +46,19 @@ class upload_dir_real_media_library {
             add_filter('wp_die_ajax_handler',               array($this, 'wp_die'));
             add_filter('wp_die_handler',                    array($this, 'wp_die'));
         }
+        
+        add_action('plugin_row_meta', array($this, 'plugin_row_meta'), 10, 2 );
 	}
+	
+	/**
+     * Add an "Get PRO" link to the plugin row links.
+     */
+    public function plugin_row_meta($links, $file) {
+        if( false !== strpos($file, 'physical-custom-upload-folder/upload_dir-real_media_library') ){
+            $links[] = '<a target="_blank" href="https://matthias-web.com/go/codecanyon/23104206"><strong>Get PRO (moving files)</strong></a>';
+        }
+        return $links;
+    }
 	
 	public function admin_notices() {
 ?>
@@ -153,7 +165,7 @@ class upload_dir_real_media_library {
      */
     private function delete_folder($folder) {
         $upload_dir = wp_upload_dir();
-        if (0 !== strpos($folder, $upload_dir["basedir"])) {
+        if (is_string($upload_dir["basedir"]) && 0 !== strpos($folder, $upload_dir["basedir"])) {
             return;
         }
         
