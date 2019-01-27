@@ -10,9 +10,4 @@ RewriteRule . /index.php [L]
 </IfModule>
 # END WordPress
 
-# BEGIN JWT API Auth
-RewriteEngine on
-RewriteCond %{HTTP:Authorization} ^(.*)
-RewriteRule ^(.*) - [E=HTTP_AUTHORIZATION:%1]
-SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
-# END JWT API Auth
+

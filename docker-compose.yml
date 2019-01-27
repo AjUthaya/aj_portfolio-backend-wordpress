@@ -9,6 +9,11 @@ services:
     volumes:
       - ./:/usr/share/nginx/html
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    environment:
+      WORDPRESS_DB_HOST: ${mysql_dev_host}
+      WORDPRESS_DB: ${mysql_dev_database}
+      WORDPRESS_DB_USER: ${mysql_dev_username}
+      WORDPRESS_DB_PASSWORD: ${mysql_dev_password}
     ports:
       - 127.0.0.1:3000:80
 
@@ -21,6 +26,11 @@ services:
     restart: always
     volumes:
       - ./:/usr/share/nginx/html
+    environment:
+      WORDPRESS_DB_HOST: ${mysql_dev_host}
+      WORDPRESS_DB: ${mysql_dev_database}
+      WORDPRESS_DB_USER: ${mysql_dev_username}
+      WORDPRESS_DB_PASSWORD: ${mysql_dev_password}
 
   # MySql
   mysql:

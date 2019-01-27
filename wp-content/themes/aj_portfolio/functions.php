@@ -55,6 +55,7 @@ class AjPortfolio extends Timber\Site
     
     public function add_to_context($context)
     {
+        /*
         // Logged In
         $context['logged_in'] = false;
         $logged_in_user =  wp_get_current_user();
@@ -71,6 +72,7 @@ class AjPortfolio extends Timber\Site
         $context['menu_top_nav'] = new Timber\Menu('menu_top_nav');
         // Dev
         $context['env'] = get_env();
+        */
         // RETURN
         return $context;
     }
