@@ -1,6 +1,6 @@
 # AJ Portfolio (Backend)
 
-Backend repo for AJ Portfolio, this is a headless WordPress solution.
+![logo_banner](https://raw.githubusercontent.com/AjUthaya/aj_portfolio-backend-wordpress/3399d9abdde62ba6034600af8a817cf9d9ef4068/wp-content/uploads/site/logo_banner.png)
 
 ## Setup
 
