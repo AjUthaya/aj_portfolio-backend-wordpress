@@ -14,7 +14,8 @@ function get_env()
     $dev_urls = array(
     'wordpress.test',
     'localhost',
-    'localhost:8888'
+    'localhost:8888',
+    'localhost:3000'
     );
     // 4. Define a default envirement variable of production
     $env = 'prod';

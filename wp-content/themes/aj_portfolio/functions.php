@@ -24,10 +24,13 @@ require_once __DIR__ . '/functions/cpt/remove_default_post_type.php';
 // IMPORT: Mime support for uploads
 require_once __DIR__ . '/functions/general/mime_upload_support.php';
 
+// IMPORT: Image sizes
+require_once __DIR__ . '/functions/general/image_sizes.php';
+
 // IMPORT: Enqueue assets
 require_once __DIR__ . '/functions/general/enqueue_assets.php';
 
-// IMPORT: Rest
+// IMPORT: REST API
 require_once __DIR__ . '/functions/general/rest_restrict.php';
 require_once __DIR__ . '/functions/general/rest_cors.php';
 
