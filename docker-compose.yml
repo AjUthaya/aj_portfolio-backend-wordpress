@@ -22,7 +22,7 @@ services:
     image: mysql:5.7
     restart: always
     volumes:
-      - /opt/docker/mysql/aj_portfolio-backend-wordpress:/var/lib/mysql
+      - /opt/docker/mysql/aj_portfolio:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: ${mysql_dev_root}
       MYSQL_DATABASE: ${mysql_dev_database}
