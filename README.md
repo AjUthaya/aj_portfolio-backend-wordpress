@@ -1,88 +1,109 @@
 # AJ Portfolio (Backend)
 
-![logo_banner](https://raw.githubusercontent.com/AjUthaya/aj_portfolio-backend-wordpress/3399d9abdde62ba6034600af8a817cf9d9ef4068/wp-content/uploads/site/logo_banner.png)
+![logo_banner](https://imgur.com/f2beX1w.png)
 
-## Setup
+This repository is a part of my personal portfolio project, it is built with the separation of the frontend and backend in mind (micro services). So that i have one backend, where all the data comes from and a frontend where the user sees the data presented in a pretty and user frinely way. This way if i feel like building a new website for my portfolio, all i have to build is a new frontend and reuse the data from the backend.
 
-1. Placeholder, will be replaced soon
+## Prerequisites
+
+### System
+
+Software that the system requires to be able to run this repository.
+
+- [Docker](https://www.docker.com/products/docker-desktop) - Docker is a computer program that performs operating-system-level virtualization, also known as "containerization".
+
+- [MySQL](https://www.mysql.com/) - MySQL is an open source relational database management system.
+
+### Configuration
+
+A list of the configuration files that you have to create, for every configuration file listed below there should a file with the suffix "\-example" before the extention. So all you have to do is copy that file and replace the values.
+
+- wp-config.php
 
 ## Run
 
-### Dev
+### Development
 
-1. Placeholder, will be replaced soon
+1. Coming soon
+
+### Review
+
+1. Coming soon
+
+### Staging
+
+1. Coming soon
+
+### Production
+
+1. Coming soon
 
 ## Test
 
-Note: For local tests, app has to be running in the background
+### Development
 
-- Run `npm run tests` to test via command line
-- Run `npm run tests:open` to open up the cypress GUI
+1. Coming soon
 
-## Technologies Used
+### Review
 
-### PHP
+1. Coming soon
 
-PHP: Hypertext Preprocessor (or simply PHP) is a server-side scripting language designed for Web development. PHP originally stood for Personal Home Page, but it now stands for the recursive initialism PHP: Hypertext Preprocessor.
+### Staging
 
-[Link to docs](http://php.net/docs.php/)
+1. Coming soon
 
-### Twig
+### Production
 
-Twig is a template engine for the PHP programming language. Its syntax originates from Jinja and Django templates. It's an open source product licensed under a BSD License and maintained by Fabien Potencier. The initial version was created by Armin Ronacher. Symfony2 PHP framework comes with a bundled support for Twig as its default template engine.
+1. Coming soon
 
-[Link to docs](http://php.net/docs.php/)
+## Application
 
-### NodeJS
+### Linter
 
-Node.js is an open-source, cross-platform JavaScript run-time environment that executes JavaScript code outside of a browser. Typically, JavaScript is used primarily for client-side scripting, in which scripts written in JavaScript are embedded in a webpage's HTML and run client-side by a JavaScript engine in the user's web browser.
+Coming soon
 
-[Link to docs](https://nodejs.org/en/docs/)
+### Architecture
 
-### NVM
+![application_architecture](https://imgur.com/bxhhkqt.png)
 
-Node Version Manager (nvm) is a tool that allows you to manage multiple versions of Node.js on the same machine. Each version runs in its own isolated environment, so you can safely switch versions without affecting the whole system.
+### Design
 
-[Link to docs](https://github.com/creationix/nvm/)
+Coming soon
 
-### NPM
+## Versioning
 
-npm is a package manager for the JavaScript programming language. It is the default package manager for the JavaScript runtime environment Node.js. It consists of a command line client, also called npm, and an online database of public and paid-for private packages, called the npm registry.
+We use git for versioning. For the versions available, see the [tags on this repository](https://github.com/AjUthaya/aj_portfolio-backend-wordpress/tags).
 
-[Link to docs](https://docs.npmjs.com/)
+### Add a new version tag
 
-### Webpack
+1. Update the CHANGELOG file with a new section and the "Unreleased Changes" link with the new tag version
 
-Webpack is an open-source JavaScript module bundler. Its main purpose is to bundle JavaScript files for usage in a browser, yet it is also capable of transforming, bundling, or packaging just about any resource or asset. Webpack takes modules with dependencies and generates static assets representing those modules.
+2. Create a new tag `git tag X.X.X`
 
-[Link to docs](https://webpack.js.org/concepts/)
+3. Push the new tag to remote `git push origin --tags`
 
-### HTML
+### Add a version tag for an older commit
 
-Hypertext Markup Language (HTML) is the standard markup language for creating web pages and web applications. With Cascading Style Sheets (CSS) and JavaScript, it forms a triad of cornerstone technologies for the World Wide Web.
+1. Type in `git log` in the root of the repo, to list all the commits with ID's
 
-[Link to docs](https://developer.mozilla.org/kab/docs/Web/HTML/)
+- Press <kbd>Q</kbd> to get out of the list view
 
-### SASS (SCSS)
+2. Create a tag for an older commit `git tag -a X.X.X COMMIT_ID`
 
-Sass (Syntactically Awesome Style Sheets) is an extension of CSS that enables you to use things like variables, nested rules, inline imports and more. It also helps to keep things organised and allows you to create style sheets faster.
+3. Push the tag to remote `git push origin --tags`
 
-[Link to docs](http://sass-lang.com/documentation/file.SASS_REFERENCE.html/)
+### Remove a version tag
 
-### JavaScript
+1. Remove tag `git tag -d X.X.X`
 
-JavaScript, often abbreviated as JS, is a high-level, interpreted programming language that conforms to the ECMAScript specification. It is a language which is also characterized as dynamic, weakly typed, prototype-based and multi-paradigm.
+2. Remove tag from remote `git push -d origin X.X.X`
 
-[Link to docs](https://developer.mozilla.org/bm/docs/Web/JavaScript)
+## Technologies
 
-### Sentry
+### [PHP](http://www.php.net/)
 
-Sentry is an open-source error tracking platform that provides complete app logic, deep context, and visibility across the entire stack in real time. For the first time, developers can fix bugs at every stage of the product lifecycle, well before users ever encounter a problem.
+PHP stands for Hypertext Preprocessor (no, the acronym doesn't follow the name). It's an open source, server-side, scripting language used for the development of web applications.
 
-[Link to docs](https://docs.sentry.io/)
+### [WordPress](https://wordpress.com/)
 
-### Cypress
-
-Cypress is free, open source, and locally installed front end testing tool. It can be used by developers or QA engineers, who build web applications using JavaScript framework. One can do unit testing, integration testing and end to end testing by writing test case using Cypress. Using cypress, one can test anything that can run in browser.
-
-[Link to docs](https://docs.cypress.io/)
+WordPress is a free and open-source content management system based on PHP & MySQL. Features include a plugin architecture and a template system.
