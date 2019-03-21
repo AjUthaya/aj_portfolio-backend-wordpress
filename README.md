@@ -26,33 +26,11 @@ A list of the configuration files that you have to create, for every configurati
 
 1. Coming soon
 
-### Review
-
-1. Coming soon
-
-### Staging
-
-1. Coming soon
-
 ### Production
 
 1. Coming soon
 
 ## Test
-
-### Development
-
-1. Coming soon
-
-### Review
-
-1. Coming soon
-
-### Staging
-
-1. Coming soon
-
-### Production
 
 1. Coming soon
 
